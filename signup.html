@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: midnightblue;
+        }
+        div{
+            text-align: center;
+            font-size: larger;
+            color: white;
+        }
+        #id{
+            border: 2.5px solid white;
+            width: 200px;
+            height: 30px;
+        }
+        #password{
+            border: 2.5px solid midnightblue;
+            width: 200px;
+            height: 30px;
+        }
+        #idText{
+            font-family:'Courier New', Courier, monospace;
+            font-weight: bold;
+            color: white;
+            text-align: left;
+            font-size: larger;
+        }
+        #pwText{
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            color: white;
+            text-align: left;
+            font-size: larger;
+
+        }
+        #rpwText{
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            color: white;
+            text-align: left;
+            font-size: larger;
+        }
+        #container{
+            border: 1px solid silver;
+            margin: 10px;
+            padding: 10px;
+            width: 500px;
+            height: auto;
+            margin: auto;
+        }
+        #header{
+            font-family: 'Courier New', Courier, monospace;
+            font-size: larger;
+            text-align: center;
+        }
+        button{
+            width: 200px;
+            height: 30px;
+            background-color: white;
+            color: midnightblue;
+            border-color: white;
+        }
+        #r_password{
+            border: 2.5px solid midnightblue;
+            width: 200px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header id="header">회원가입 하기</header>
+            <span id="idText">ID : </span><input type="text" id="id" placeholder="아이디를 입력해주세요"><br><br>
+            <span id="pwText">PASSWORD : </span><input type="password" id="password" placeholder="비밀번호를 입력해주세요"><br><br>
+            <span id="rpwText">PASSWORD CHECK : </span><input type="password" id="r_password" placeholder="비밀번호를 다시 입력해주세요"><br><br>
+            <button id="logBtn" onclick="signup()">SIGN UP</button>
+    </div>
+    <script>
+        function signup(){
+            var signinId = document.querySelector('#id');
+            var signinPw = document.querySelector('#password');
+            var rPw = document.getElementById('r_password');
+            if(signinId.value == '' || signinPw.value == ''){
+                alert('회원가입을 할 수 없습니다.')
+            }
+            else if(signinPw.value == rPw.value){
+                alert(`회원가입에 성공했습니다. 아이디 : ${signinId.value}, 패스워드 : ${signinPw.value}`)
+            }
+        }
+    </script>
+</body>
+</html>

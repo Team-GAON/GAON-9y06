@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+        #id{
+            border: 2.5px solid midnightblue;
+            width: 200px;
+            height: 30px;
+        }
+        #password{
+            border: 2.5px solid midnightblue;
+            width: 200px;
+            height: 30px;
+        }
+        #idText{
+            font-family:'Courier New', Courier, monospace;
+            font-weight: bold;
+            color: midnightblue;
+            font-size: larger;
+        }
+        #pwText{
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            color: midnightblue;
+            font-size: larger;
+
+        }
+        #container{
+            border: 1px solid silver;
+            margin: 10px;
+            padding: 10px;
+            width: 500px;
+            height: auto;
+            margin: auto;
+            text-align: center;
+        }
+        #header{
+            font-family: 'Courier New', Courier, monospace;
+            font-size: larger;
+            text-align: center;
+        }
+        #form{
+            text-align: center;
+        }
+        button{
+            width: 200px;
+            height: 30px;
+            background-color: midnightblue;
+            color: white;
+            border-color: midnightblue;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header id="header">로그인 하기</header>
+            <span id="idText">ID : </span><input type="text" id="id" placeholder="아이디를 입력해주세요"><br><br>
+            <span id="pwText">PASSWORD : </span><input type="password" id="password" placeholder="비밀번호를 입력해주세요"><br><br>
+            <button id="logBtn" onclick="login()">LOGIN</button><button id="signBtn" onclick="WG()">SIGN UP</button>
+    </div>
+    <script>
+        function login(){
+            var loginId = document.querySelector('#id');
+            var loginPw = document.querySelector('#password');
+            if(loginId.value == '' || loginPw.value == ''){
+                alert('로그인을 할 수 없습니다.')
+            }
+            else{
+                alert(`로그인에 성공했습니다. 아이디 : ${loginId.value}, 패스워드 : ${loginPw.value}`)
+            }
+        }
+        const WG = () => {
+            window.location.href = '/signup.html'
+        }
+    </script>
+</body>
+</html>
